@@ -2,6 +2,7 @@
     --color-1: #0f1016;
     --text-color: #f0f0f0;
     --accent-color: #006aff;
+    --bg-content-row: #ffffff;
 }
 
 * {
@@ -10,16 +11,26 @@
 }
 
 html {
+    width: 100vw;
+    height: 100vh;
     font-size: 12pt;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    padding-top: 60px;
+}
+
 nav {
+    position: fixed;
+    top: 0;
     height: 60px;
+    width: 100%;
     background-color: var(--color-1);
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 10;
 }
 
 .linksContainer {
@@ -101,4 +112,38 @@ nav svg {
         left: 0;
         z-index: 9;
     }
+}
+
+.contentRow {
+    padding: 30px;
+    background-color: var(--bg-content-row);
+}
+
+.parallax {
+    background-image: url("/resources/images/blackboard.jpg");
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax h1 {
+    color: var(--text-color);
+    font-size: 48pt;
+}
+
+#presentation-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.profilePicture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: solid var(--color-1) 10px;
 }
