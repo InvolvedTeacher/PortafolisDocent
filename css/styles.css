@@ -2,7 +2,7 @@
     --color-1: #0f1016;
     --text-color: #f0f0f0;
     --accent-color: #006aff;
-    --bg-content-row: #ffffff;
+    --bg-content-row: #ffffffc0;
 }
 
 * {
@@ -19,6 +19,11 @@ html {
 
 body {
     padding-top: 60px;
+    background-image: url("../resources/images/blackboard.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
@@ -72,7 +77,55 @@ nav svg {
     display: none;
 }
 
-@media(max-width: 600px) {
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parallax {
+    background-color: #00000000;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax h1 {
+    color: var(--text-color);
+    font-size: 48pt;
+    font-weight: 700;
+}
+
+.contentRow {
+    width: 80%;
+    padding: 30px;
+    background-color: var(--bg-content-row);
+    border-radius: 20px;
+}
+
+.contentRow h1, h2 {
+    font-weight: 500;
+}
+
+.contentRow p {
+    padding-top: 10px;
+}
+
+#presentation-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.profilePicture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: solid var(--color-1) 10px;
+    box-shadow: 0 0 20px black;
+}
+
+@media(max-width: 800px) {
     .linksContainer {
         flex-direction: column;
         align-items: flex-start;
@@ -112,38 +165,14 @@ nav svg {
         left: 0;
         z-index: 9;
     }
-}
 
-.contentRow {
-    padding: 30px;
-    background-color: var(--bg-content-row);
-}
+    #presentation-grid {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+    }
 
-.parallax {
-    background-image: url("../resources/images/blackboard.jpg");
-    min-height: 300px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.parallax h1 {
-    color: var(--text-color);
-    font-size: 48pt;
-}
-
-#presentation-grid {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-}
-
-.profilePicture {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: solid var(--color-1) 10px;
+    .profilePicture {
+        width: 100px;
+        height: 100px;
+    }
 }
