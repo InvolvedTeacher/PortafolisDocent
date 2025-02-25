@@ -120,7 +120,7 @@ nav svg {
 }
 
 .parallax {
-    background-image: url("/resources/images/blackboard.jpg");
+    background-image: url("../resources/images/blackboard.jpg");
     min-height: 300px;
     background-attachment: fixed;
     background-position: center;

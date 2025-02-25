@@ -14,7 +14,7 @@ function navigate(page) {
         );
 }
 
-navigate("home");
+navigate("./home.html");
 
 document.querySelectorAll(".pageLink").forEach(link => {
     link.addEventListener("click", function (event) {
