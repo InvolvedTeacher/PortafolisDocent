@@ -20,7 +20,7 @@ document.querySelectorAll(".pageLink").forEach(link => {
     link.addEventListener("click", function (event) {
         event.preventDefault();
 
-        let page = this.getAttribute("href").substring(1);
+        let page = this.getAttribute("href").substring(2)
 
         navigate(page);
     });
