@@ -85,7 +85,7 @@ nav svg {
 
 .parallax {
     background-color: #00000000;
-    min-height: 300px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,6 +110,17 @@ nav svg {
 
 .contentRow p {
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contentRow ul {
+    padding-left: 30px;
+}
+
+.objectives li {
+    list-style-type: "🎯";
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 #presentation-grid {
