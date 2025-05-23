@@ -1,27 +1,19 @@
-function navigate(page) {
-    let container = document.getElementById("content");
+function loadPageFromHash() {
+    const hash = window.location.hash.substring(1) || 'home'; // Default to 'home'
+    const url = `./${hash}.html`;
 
-    fetch(page)
-        .then(response => response.text())
-        .then(html => {
-            container.innerHTML = html;
-            let sideboardActive = document.getElementById("sidebar-active")
-            sideboardActive.checked = false;
+    fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error("Page not found");
+            return response.text();
         })
-        .catch(error => {
-            console.error("Error fetching page: ", error);
-        }
-        );
+        .then(html => {
+            document.getElementById('content').innerHTML = html;
+        })
+        .catch(err => {
+            document.getElementById('content').innerHTML = '<p>Error loading page.</p>';
+        });
 }
 
-navigate("./home.html");
-
-document.querySelectorAll(".pageLink").forEach(link => {
-    link.addEventListener("click", function (event) {
-        event.preventDefault();
-
-        let page = this.getAttribute("href").substring(2)
-
-        navigate(page);
-    });
-});
+window.addEventListener('hashchange', loadPageFromHash);
+window.addEventListener('DOMContentLoaded', loadPageFromHash);
