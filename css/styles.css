@@ -123,6 +123,11 @@ nav svg {
     padding-bottom: 10px;
 }
 
+.bibliography li {
+    list-style-type: "🗎";
+    padding: 10px;
+}
+
 #presentation-grid {
     display: grid;
     grid-template-columns: 300px 1fr;
