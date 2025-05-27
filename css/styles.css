@@ -202,11 +202,11 @@ nav svg {
 }
 
 .grid-item {
-    background-color: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
+    background-color: var(--bg-content-row);
 }
 
 .grid-item img {
